@@ -3,10 +3,11 @@ import { Link as VLink } from "next-view-transitions";
 import { BentoGrid, BentoGridItem } from "./components/bento";
 import { cn } from "../../utils/cn";
 import Image from "next/image";
+import Clone from "./components/clone";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-y-6">
+    <main className="flex flex-col gap-y-6 ">
       <div>
         <h1 className="text-4xl font-bold">Sai Tarun</h1>
         <div className="flex gap-x-2">
@@ -85,8 +86,8 @@ export default function Home() {
               description:
                 "My personal portfolio built with Next.js, Tailwind CSS, and Vercel.",
               header: (
-                <div className="w-full h-4/6 relative">
-                  {/* <Image src="/images/portfolio.png" alt="Portfolio" fill /> */}
+                <div className="w-full h-4/6 relative rounded-md">
+                  <Clone />
                 </div>
               ),
             },
@@ -95,15 +96,15 @@ export default function Home() {
               description: "A platform for users to debate on various topics.",
               header: (
                 <Link
-                  href={"https://debate-xi.vercel.app/"}
+                  href={"https://debate-xi.vercel.app/arg/197"}
                   target="_blank"
                   className={
                     "w-full h-4/6 relative hover:opacity-80 group transition-opacity"
                   }
                 >
                   <div className="absolute inset-0 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-all">
-                    <span className="text-md font-bold text-black">
-                      Open in new Window
+                    <span className="text-md font-bold text-black text-center">
+                      Open in new tab
                     </span>
                   </div>
                   <Image
@@ -124,7 +125,7 @@ export default function Home() {
               title={item.title}
               description={item.description}
               header={item.header}
-              className={cn("[&>p:text-lg]", item.className)}
+              className={cn(item.className)}
             />
           ))}
         </BentoGrid>
