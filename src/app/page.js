@@ -10,7 +10,10 @@ export default function Home() {
     <main className="flex flex-col gap-y-6 ">
       <div>
         <h1 className="text-4xl font-bold">Sai Tarun</h1>
-        <div className="flex gap-x-2">
+        <p className="text-sm md:text-md text-slate-400">
+          saitarunsanagapati@gmai.com
+        </p>
+        <div className="flex gap-x-2 mt-2 flex-wrap">
           {[
             {
               link: "https://www.linkedin.com/in/saitaruns",
@@ -19,6 +22,10 @@ export default function Home() {
             {
               link: "https://github.com/saitaruns",
               text: "GitHub",
+            },
+            {
+              link: "https://drive.google.com/file/d/10VdN18HVUD2QdS7Ycjwms1Hce6xjkDUh/view?usp=sharing",
+              text: "Resume",
             },
           ].map(({ link, text }) => (
             <Link
@@ -32,16 +39,15 @@ export default function Home() {
           ))}
         </div>
       </div>
-      {/* <hr className="my-4 w-full" /> */}
 
       <p className="text-lg">
-        I&apos;m a software engineer and designer based in India. I&apos;m
-        passionate about building products that are accessible, inclusive, and
-        delightful.
+        I&apos;m a software engineer based in India. I have done my B.Tech in
+        Computer Science from IIITS, AP. I&apos;m passionate about building
+        products that are accessible, inclusive, and delightful.
       </p>
 
       <section className="flex flex-col gap-y-4">
-        <h2 className="text-2xl">Career</h2>
+        <h2 className="text-2xl font-bold">Career</h2>
         <ol class="relative border-s dark:border-neutral-600 border-neutral-400 ml-[11.5px] flex flex-col gap-8">
           {[
             {
@@ -49,7 +55,7 @@ export default function Home() {
               title: "Cogoport",
               role: "SDE - I",
               description:
-                "Worked on the frontend of the company's website and also worked on the company's internal tools such as CMS, Blog, etc.",
+                "Worked on the Public site, Blogs . Also worked on the company's internal tools such as CMS.",
             },
             {
               time: "May 2022",
@@ -63,10 +69,10 @@ export default function Home() {
               <time class="text-sm font-mono leading-none text-neutral-800 dark:text-neutral-200">
                 {time}
               </time>
-              <h2 class="text-xl mt-1 font-bold text-neutral-900 dark:text-neutral-100 block cogo">
+              <h2 class="text-xl mt-1 font-semibold text-neutral-900 dark:text-neutral-100 block cogo">
                 {title}
               </h2>
-              <h4 class="text-lg mt-2 font-medium dark:text-neutral-100 text-neutral-900 block">
+              <h4 class="text-sm mt-2 font-medium dark:text-neutral-100 text-neutral-900 block">
                 {role}
               </h4>
               <p class="mt-1 dark:text-neutral-200 text-neutral-800 text-pretty font-mono">
@@ -78,7 +84,38 @@ export default function Home() {
       </section>
 
       <section className="flex flex-col gap-y-4">
-        <h2 className="text-2xl">Projects</h2>
+        <h2 className="text-2xl font-bold">Skills</h2>
+        <div className="flex flex-wrap gap-4">
+          {[
+            "Next.js",
+            "Astro",
+            "React",
+            "Tailwind CSS",
+            "JavaScript",
+            "Python",
+            "C++",
+            "Java",
+            "HTML",
+            "CSS",
+            "Node.js",
+            "Express",
+            "PostgreSQL",
+            "Git",
+          ].map((skill) => (
+            <span
+              key={skill}
+              className={cn(
+                "px-2 py-1 text-sm font-medium rounded-md dark:bg-neutral-600 bg-neutral-400"
+              )}
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="flex flex-col gap-y-4">
+        <h2 className="text-2xl font-bold">Projects</h2>
         <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
           {[
             {
@@ -93,7 +130,8 @@ export default function Home() {
             },
             {
               title: "Debate0",
-              description: "A platform for users to debate on various topics.",
+              description:
+                "A platform for users to engage in healthy and respectful debates with people from all over the world.",
               header: (
                 <Link
                   href={"https://debate-xi.vercel.app/arg/197"}
@@ -125,7 +163,7 @@ export default function Home() {
               title={item.title}
               description={item.description}
               header={item.header}
-              className={cn(item.className)}
+              // className={i === 1 ? "md:col-span-2" : ""}
             />
           ))}
         </BentoGrid>

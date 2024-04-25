@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body
         className={cn(
           inter.className,
-          "dark:bg-dot-white/[0.2] bg-dot-black/[0.2] p-16 md:w-8/12 mx-auto "
+          "dark:bg-dot-white/[0.2] bg-dot-black/[0.2] p-10 md:p-20 md:w-8/12 mx-auto "
         )}
       >
         {children}

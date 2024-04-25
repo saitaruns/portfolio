@@ -79,7 +79,9 @@ const Clone = () => {
         alt="Debate0"
         className=" rounded-md"
         fill
-        style={{}}
+        style={{
+          objectFit: "cover",
+        }}
       />
       <div
         style={{
