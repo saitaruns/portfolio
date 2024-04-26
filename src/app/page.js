@@ -47,7 +47,7 @@ export default function Home() {
 
       <section className="flex flex-col gap-y-4">
         <h2 className="text-2xl font-bold">Career</h2>
-        <ol class="relative border-s dark:border-neutral-600 border-neutral-400 ml-[11.5px] flex flex-col gap-8">
+        <ol class="relative border-s border-neutral-600ml-[11.5px] flex flex-col gap-8">
           {[
             {
               time: "Feb 2023",
@@ -64,17 +64,17 @@ export default function Home() {
             },
           ].map(({ time, title, role, description }) => (
             <li class="ms-7" key={title}>
-              <div class="absolute size-3 dark:bg-neutral-600 bg-neutral-400 rounded-full mt-1.5 -start-1.5 border border-white dark:border-black"></div>
-              <time class="text-sm font-mono leading-none text-neutral-800 dark:text-neutral-200">
+              <div class="absolute size-3 bg-neutral-600 rounded-full mt-1.5 -start-1.5 border border-black"></div>
+              <time class="text-sm font-mono leading-none text-neutral-200">
                 {time}
               </time>
-              <h2 class="text-xl mt-1 font-semibold text-neutral-900 dark:text-neutral-100 block cogo">
+              <h2 class="text-xl mt-1 font-semibold  text-neutral-100 block cogo">
                 {title}
               </h2>
-              <h4 class="text-sm mt-2 font-medium dark:text-neutral-100 text-neutral-900 block">
+              <h4 class="text-sm mt-2 font-medium text-neutral-100  block">
                 {role}
               </h4>
-              <p class="mt-1 dark:text-neutral-200 text-neutral-800 text-pretty font-mono">
+              <p class="mt-1 text-neutral-200  text-pretty font-mono">
                 {description}
               </p>
             </li>
@@ -104,7 +104,7 @@ export default function Home() {
             <span
               key={skill}
               className={cn(
-                "px-2 py-1 text-sm font-medium rounded-md dark:bg-neutral-600 bg-neutral-400"
+                "px-2 py-1 text-sm font-medium rounded-md bg-neutral-600 "
               )}
             >
               {skill}
