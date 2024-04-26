@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Link as VLink } from "next-view-transitions";
 import { BentoGrid, BentoGridItem } from "./components/bento";
 import { cn } from "../../utils/cn";
 import Image from "next/image";
@@ -7,7 +6,7 @@ import Clone from "./components/clone";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-y-6 ">
+    <main className="flex flex-col gap-y-6">
       <div>
         <h1 className="text-4xl font-bold">Sai Tarun</h1>
         <p className="text-sm md:text-md text-slate-400">
@@ -155,6 +154,17 @@ export default function Home() {
                     }}
                   />
                 </Link>
+              ),
+            },
+            {
+              title: "Coming soon...",
+              description: "More projects coming soon",
+              header: (
+                <div className="w-full h-4/6 relative rounded-md bg-slate-800 text-center flex justify-center items-center opacity-60">
+                  {/* <p className="text-md font-bold text-center text-black px-5">
+                    More projects coming soon...
+                  </p> */}
+                </div>
               ),
             },
           ].map((item, i) => (

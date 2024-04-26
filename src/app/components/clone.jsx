@@ -1,4 +1,5 @@
 "use client";
+import { toCanvas, toPng } from "html-to-image";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -10,8 +11,12 @@ const Clone = () => {
 
   useEffect(() => {
     if (ref.current) {
-      const html = document.querySelector("main").outerHTML;
-      setHtml(`${html}`);
+      const el = document.querySelector("main");
+      // const clone = el.cloneNode(true);
+
+      toCanvas(el).then((canvas) => {
+        setHtml(canvas.toDataURL("image/png"));
+      });
     }
   }, []);
 
@@ -64,25 +69,16 @@ const Clone = () => {
       className="h-full w-full overflow-auto relative no-scrollbar pointer-events-none"
       ref={ref}
     >
-      {/* <div
-        dangerouslySetInnerHTML={{
-          __html: html?.replace(/<script.*?<\/script>/g, ""),
-        }}
-        className={"absolute rounded-md overflow-hidden w-full"}
-        // style={{
-        //   scale:
-        //     (ref.current?.getBoundingClientRect().width / screen.width) * 3,
-        // }}
-      /> */}
-      <Image
-        src="/home.jpeg"
-        alt="Debate0"
-        className=" rounded-md"
-        fill
-        style={{
-          objectFit: "cover",
-        }}
-      />
+      {html && (
+        <Image
+          src={html}
+          alt="Debate0"
+          className="rounded-md relative p-10 mx-auto"
+          width={200}
+          height={200}
+          // fill
+        />
+      )}
       <div
         style={{
           position: "absolute",
