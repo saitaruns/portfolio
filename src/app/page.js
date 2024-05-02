@@ -3,10 +3,18 @@ import { BentoGrid, BentoGridItem } from "./components/bento";
 import { cn } from "../../utils/cn";
 import Image from "next/image";
 import Clone from "./components/clone";
+import dynamic from "next/dynamic";
+
+const Scene = dynamic(() => import("./components/Scene"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-y-6">
+    <main className="flex flex-col gap-y-6 relative">
+      {/* <div className="w-full h-full fixed left-0 top-0 z-50 pointer-events-none">
+        <Scene className="pointer-events-none" />
+      </div> */}
       <div>
         <h1 className="text-4xl font-bold">Sai Tarun</h1>
         <p className="text-sm md:text-md text-slate-400">
